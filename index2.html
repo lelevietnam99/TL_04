@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phần I: Mở Bài - Sườn Bài 4</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #050714;
+            background-image: 
+                radial-gradient(circle at 15% 20%, rgba(112, 0, 255, 0.22) 0%, transparent 40%),
+                radial-gradient(circle at 85% 80%, rgba(0, 212, 255, 0.18) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(15, 10, 35, 0.95) 0%, #03050c 100%);
+            background-attachment: fixed;
+            color: #e2e8f0;
+            line-height: 1.85;
+            padding: 40px 20px;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Hiệu ứng nền sao vũ trụ */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(1.5px 1.5px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 40px 70px, rgba(255,255,255,0.8), rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 90px 40px, rgba(255,255,255,0.9), rgba(0,0,0,0)),
+                radial-gradient(1.5px 1.5px at 160px 120px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 230px 190px, rgba(168, 85, 247, 0.9), rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 310px 250px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 450px 120px, rgba(56, 189, 248, 0.9), rgba(0,0,0,0));
+            background-repeat: repeat;
+            background-size: 500px 500px;
+            opacity: 0.65;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Main Essay Card */
+        .essay-card {
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 24px;
+            padding: 45px 40px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(112, 0, 255, 0.12);
+        }
+
+        /* Section Header */
+        .section-badge {
+            display: inline-block;
+            padding: 6px 18px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            color: #38bdf8;
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            border-radius: 20px;
+            margin-bottom: 16px;
+        }
+
+        h1.section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ffffff 0%, #c084fc 50%, #38bdf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 30px;
+            padding-bottom: 18px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Content Paragraphs */
+        p.content-p {
+            font-size: 1.05rem;
+            color: #cbd5e1;
+            margin-bottom: 24px;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        /* Superscript styling for footnote references */
+        sup {
+            color: #38bdf8;
+            font-weight: 700;
+            font-size: 0.8rem;
+            margin-left: 2px;
+            cursor: pointer;
+        }
+
+        /* Poem Container */
+        .poem-box {
+            background: rgba(168, 85, 247, 0.08);
+            border: 1px solid rgba(168, 85, 247, 0.25);
+            border-radius: 16px;
+            padding: 28px 20px;
+            margin: 30px auto;
+            max-width: 380px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        .poem-box::before {
+            content: '“';
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            color: rgba(168, 85, 247, 0.2);
+            position: absolute;
+            top: -10px;
+            left: 20px;
+        }
+
+        .poem-lines {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            line-height: 2;
+            color: #f1f5f9;
+            font-style: italic;
+        }
+
+        /* Thesis Box */
+        .thesis-box {
+            background: rgba(56, 189, 248, 0.06);
+            border-left: 4px solid #38bdf8;
+            border-radius: 0 14px 14px 0;
+            padding: 20px 24px;
+            margin-top: 25px;
+            margin-bottom: 30px;
+            line-height: 1.85;
+            color: #cbd5e1;
+            font-size: 1.03rem;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        /* Footnotes Section */
+        .footnotes-section {
+            margin-top: 45px;
+            padding-top: 22px;
+            border-top: 1px dashed rgba(255, 255, 255, 0.15);
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+
+        .footnotes-header {
+            font-weight: 600;
+            color: #cbd5e1;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .footnote-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .footnote-item {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 12px;
+            line-height: 1.65;
+        }
+
+        .footnote-item::before {
+            content: attr(data-num);
+            position: absolute;
+            left: 0;
+            color: #38bdf8;
+            font-weight: 600;
+        }
+
+        footer {
+            text-align: center;
+            color: #64748b;
+            font-size: 0.85rem;
+            margin-top: 35px;
+        }
+
+        @media (max-width: 600px) {
+            .essay-card {
+                padding: 25px 20px;
+            }
+            h1.section-title {
+                font-size: 1.75rem;
+            }
+            .poem-box {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <article class="essay-card">
+            <span class="section-badge">Phần Mở Đầu • Sườn Bài 4</span>
+            <h1 class="section-title">I. MỞ BÀI</h1>
+
+            <p class="content-p">
+                Trong tâm lý học tâm linh và chiều sâu của các truyền thống triết học phương Đông, sự nhầm lẫn căn bản của con người không chỉ nằm ở các khái niệm triết lý, mà khởi nguồn từ một hiện tượng tâm lý hiện sinh: sự nhập nhằng ranh giới giữa trạng thái Tỉnh và trạng thái Mộng<sup>1</sup>. Con người thông thường luôn tin rằng thế giới tỉnh giác thường nhật là thực tại chân thật vững bền. Tuy nhiên, dưới lăng kính giải phẫu tâm lý học ý thức, trạng thái tỉnh thông thường thực chất chỉ là một "giấc mộng giữa ban ngày" (Vyāvahārika-satya / Mộng mị nhận thức), nơi tâm trí bị thao túng bởi các điên đảo nhận thức (Vipallāsa) và cơ chế áp đặt ảo giác (Adhyāsa) khởi nguồn từ gốc Vô minh (Avidyā)<sup>2, 3, 5</sup>.
+            </p>
+
+            <p class="content-p">
+                Để giải mã cấu trúc ý thức và giải phóng con người khỏi giấc mộng triết học này, đại sư Śaṅkarācārya (788–820) trong hệ thống Advaita Vedānta (Nhất nguyên vô biệt) đã xây dựng mô hình Ba trạng thái ý thức (Avasthātraya): trạng thái Tỉnh (Jāgrat), trạng thái Mộng (Svapna), và trạng thái Ngủ sâu (Suṣupti)<sup>7</sup>. Nhằm vượt qua những hạn lượng mộng mị của ba trạng thái biến dịch này, Śaṅkarācārya chỉ ra trạng thái Siêu việt Turīya (Trạng thái thứ tư / Tánh giác thuần túy Bất nhị)—nơi Bản thể Nirguṇa Brahman bừng sáng, giải thoát tâm thức hoàn toàn khỏi ảo ảnh Māyā<sup>2, 8</sup>.
+            </p>
+
+            <p class="content-p">
+                Song song đó, trong dòng chảy Thiền học Phật giáo Việt Nam thời hiện đại, Thiền sư Thích Thanh Từ qua bài kệ “Mộng” (sáng tác tại Thiền viện Chân Không, tháng 7 năm 1980) đã phác thảo một lộ trình chuyển hóa tâm lý ý thức vô cùng trực tiếp và sống động<sup>4</sup>:
+            </p>
+
+            <!-- Khối Trình Bày Bài Kệ Mộng -->
+            <div class="poem-box">
+                <div class="poem-lines">
+                    “Gá thân mộng<br>
+                    Dạo cảnh mộng<br>
+                    Mộng tan rồi<br>
+                    Cười vỡ mộng<br>
+                    Ghi lời mộng<br>
+                    Nhắn khách mộng<br>
+                    Biết được mộng<br>
+                    Tỉnh cơn mộng.”
+                </div>
+            </div>
+
+            <p class="content-p">
+                Nhìn từ góc độ tâm lý học nhận thức, bài kệ của Thiền sư Thích Thanh Từ khắc họa tiến trình thức tỉnh tâm lý đi từ sự “Chấp mộng” (Gá thân mộng, Dạo cảnh mộng—coi Thân uẩn và Cảnh trần là thực tồn), chuyển sang sự “Nhận diện mộng” (Biết được mộng—thắp sáng Tánh giác phản quang tự kỷ), và đạt đến sự Bừng tỉnh tâm lý toàn diện (Cười vỡ mộng, Tỉnh cơn mộng—đập tan cấu trúc ngã chấp để tự tại dấn thân phụng sự)<sup>6, 9</sup>.
+            </p>
+
+            <!-- Khối Trình Bày Luận Đề -->
+            <div class="thesis-box">
+                Do đó, bài tiểu luận này hướng đến việc làm sáng tỏ luận đề: Cả hai hệ thống tư tưởng đều tiếp cận con đường giải thoát dưới lăng kính tâm lý học ý thức nhằm đập tan sự nhầm lẫn giữa Tỉnh và Mộng; nhưng Advaita Vedānta vươn tới trạng thái Siêu việt Turīya để hòa nhập vào Bản thể Đại ngã Bất nhị vĩnh cửu (Nirguṇa Brahman), trong khi Thiền sư Thích Thanh Từ lại đứng vững trên tinh thần Tánh Không Vô ngã (Śūnyatā / Anātman) của Phật giáo để trao lại chìa khóa Tánh giác bản hữu (“Biết được mộng”), mở ra sự bừng sáng tâm lý hiện tiền (“Tỉnh cơn mộng”) và tinh thần dấn thân nhập thế Bồ-tát hạnh (“Ghi lời mộng, Nhắn khách mộng”) ngay giữa lòng thực tại<sup>2, 3, 6</sup>.
+            </div>
+
+            <!-- Footnotes -->
+            <div class="footnotes-section">
+                <div class="footnotes-header">
+                    <span>📌 CHÚ THÍCH & TRÍCH DẪN NGUỒN (FOOTNOTES CHO PHẦN MỞ BÀI - SƯỜN BÀI 4)</span>
+                </div>
+                <ul class="footnote-list">
+                    <li class="footnote-item" data-num="1">
+                        Lê Xuân Khoa (1972), Nhập môn Triết học Ấn Độ, NXB Trung tâm Học liệu Bộ Giáo dục, Sài Gòn, tr. 185–192; đối chiếu bài giảng "1. Buổi 1 (18-01-2026).mp3".
+                    </li>
+                    <li class="footnote-item" data-num="2">
+                        Śaṅkarācārya, Brahmasūtra-bhāṣya (Chú giải Kinh Brahma), Adhyāya 1, Pāda 1; xem thêm Swami Gambhirananda (dịch) (1965), Brahma Sutra Bhasya of Shankaracharya, Advaita Ashrama, Kolkata, tr. 14–22; đối chiếu bài giảng "2. Buổi 2 (ngày 18-01-2026).mp3" & "3. Buổi 3 (ngày 31-3-2026).mp3".
+                    </li>
+                    <li class="footnote-item" data-num="3">
+                        Thích Chơn Thiện (1999), Pāli Phật học Đại cương, NXB Tôn Giáo, Hà Nội, tr. 84–96; đối chiếu bài giảng "4b. Buổi học ngày 23-9-2026.mp3" (Làm rõ sự phân định ranh giới giữa Vô minh Avidyā - nguyên nhân gốc và Điên đảo nhận thức Vipallāsa - kết quả sinh khởi).
+                    </li>
+                    <li class="footnote-item" data-num="4">
+                        Thiền sư Thích Thanh Từ (1980), Bài kệ "Mộng", khắc tại Thiền viện Chân Không, Bà Rịa - Vũng Tàu, sáng tác tháng 7/1980; đối chiếu bài giảng "3. Buổi học ngày 21-9-2026.mp3".
+                    </li>
+                    <li class="footnote-item" data-num="5">
+                        Thích Minh Châu (dịch) (2012), Kinh Trung Bộ (Majjhima Nikāya), Kinh Tất Cả Lậu Hoặc (Sabbāsava Sutta, số 2), NXB Tôn Giáo, Hà Nội; đối chiếu bài giảng "3. Buổi 3 (ngày 31-3-2026).mp3".
+                    </li>
+                    <li class="footnote-item" data-num="6">
+                        Thiền sư Thích Thanh Từ (1997), Bí quyết tu thiền, NXB Tôn Giáo, Hà Nội, tr. 35–48; đối chiếu bài giảng "1. Buổi 1 (18-01-2026).mp3".
+                    </li>
+                    <li class="footnote-item" data-num="7">
+                        Swami Nikhilananda (trans.) (1949), The Mandukya Upanishad with Gaudapada's Karika and Sankara's Commentary, Sri Ramakrishna Math, Chennai (Phân tích Ba trạng thái ý thức Avasthātraya và Trạng thái Siêu việt Turīya).
+                    </li>
+                    <li class="footnote-item" data-num="8">
+                        Radhakrishnan, S. (1999), Indian Philosophy, Vol. 2, Oxford University Press, New Delhi, tr. 480–485; đối chiếu bài giảng "2. Buổi học ngày 16-9-2026.mp3".
+                    </li>
+                    <li class="footnote-item" data-num="9">
+                        Viện Triết học (2004), Lịch sử Triết học Phương Đông, NXB Chính trị Quốc gia, Hà Nội, tr. 330–335; đối chiếu bài giảng "3. Buổi học ngày 21-9-2026.mp3".
+                    </li>
+                </ul>
+            </div>
+        </article>
+
+        <footer>
+            <p>© Giao diện đọc tiểu luận trực tuyến • Cosmic Theme</p>
+        </footer>
+    </div>
+
+</body>
+</html>
